@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF361E331E15A12A003F9EFA /* AskTheCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */; };
 		BFD611E11E1446E40054A0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E01E1446E40054A0FB /* AppDelegate.swift */; };
 		BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E21E1446E40054A0FB /* MainViewController.swift */; };
 		BFD611E61E1446E40054A0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD611E41E1446E40054A0FB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskTheCommunityViewController.swift; sourceTree = "<group>"; };
 		BFD611DD1E1446E40054A0FB /* NativeCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD611E01E1446E40054A0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD611E21E1446E40054A0FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				BFD611E01E1446E40054A0FB /* AppDelegate.swift */,
 				BFD611E21E1446E40054A0FB /* MainViewController.swift */,
 				BFD612151E1462280054A0FB /* DataTableViewController.swift */,
+				BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */,
 				BFD612111E1461C70054A0FB /* TopTabTableViewCell.swift */,
 				BFD611E41E1446E40054A0FB /* Main.storyboard */,
 				BFD611E71E1446E40054A0FB /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 			files = (
 				BFD612161E1462280054A0FB /* DataTableViewController.swift in Sources */,
 				BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */,
+				BF361E331E15A12A003F9EFA /* AskTheCommunityViewController.swift in Sources */,
 				BFD612121E1461C70054A0FB /* TopTabTableViewCell.swift in Sources */,
 				BFD612101E1447310054A0FB /* RGPageViewController.swift in Sources */,
 				BFD611E11E1446E40054A0FB /* AppDelegate.swift in Sources */,
@@ -525,6 +529,7 @@
 				BFD612071E1446E40054A0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFD612081E1446E40054A0FB /* Build configuration list for PBXNativeTarget "NativeCommunityTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +538,7 @@
 				BFD6120A1E1446E40054A0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFD6120B1E1446E40054A0FB /* Build configuration list for PBXNativeTarget "NativeCommunityUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +547,7 @@
 				BFD6120D1E1446E40054A0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

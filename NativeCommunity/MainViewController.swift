@@ -23,13 +23,15 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     var data: [[String: AnyObject]] = []
     
     //Dictionary that holds a 2-D array of dictionaries respective to each tab.
-    var tabs = ["TOP" : [[String : AnyObject]](), "NEW" : [[String : AnyObject]](), "PERIOD QUESTIONS" : [[String:AnyObject]]()]
+    var tabs = ["TOP" : [[String : AnyObject]](), "NEW" : [[String : AnyObject]](), "PERIOD QUESTIONS" : [[String:AnyObject]](), "OFF-TOPIC" : [[String : AnyObject]]()]
     
     //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
     let tabNames = ["TOP", "NEW", "PERIOD QUESTIONS", "OFF-TOPIC"]
     
+    let topTabIndex = 0, newTabIndex = 1, periodQuestionsTabIndex = 2, offTopicTabIndex = 3
     
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var askTheCommunityButton: UIButton!
     
     
     //Dummy data
@@ -38,6 +40,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     let testPost3 = ["question" : "How can I deal with anger?", "description" : "My family pisses me off. my mom is quite possibly the most asdasdasd","username" : "Gal", "category" : "Off-Topic"]
     let testPost4 = ["question" : "Cramping before period? Did you have implantation cramping before your periodasdasd", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"]
     let testPost5 = ["question" : "Tampons. Um.", "description" : "Mabye this is a bit tmi but here goes. So my period just started...", "username" : "Eliza Hamilton", "category" : "Trending"]
+    let testPost6 = ["question" : "blablablalblalbalbla", "description" : "lalalalalalala", "username" : "lala", "category" : "Off-Topic"]
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -56,12 +59,30 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         super.viewDidLoad()
         self.datasource = self
         self.delegate = self
-        self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>]
+        self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>, self.testPost6 as Dictionary<String, AnyObject>]
         self.tabs["TOP"] = self.data
+        self.view.bringSubview(toFront: self.askTheCommunityButton)
+        setupNavBar()
+        
+    }
+    
+    func setupNavBar() -> Void {
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navItem.titleView?.tintColor = UIColor.white
+        self.navItem.rightBarButtonItem = UIBarButtonItem.init(title: "profileImage", style: .plain, target: self, action: #selector(profileImageButtonHandler))
+    }
+    
+    func profileImageButtonHandler() {
+        
+        print ("Profile image clicked")
+        
+    }
+    
+    @IBAction func askTheCommunityButtonActionHandler(_ sender: UIButton) {
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,10 +120,23 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard!.instantiateViewController(withIdentifier: "DataTableViewController") as! DataTableViewController
-        dataViewController.view.frame = CGRect.init(x: 0, y: 164, width: 500, height: 1000)// CGRect.init(x: 0, y: Int(self.heightForTabAtIndex(index)), width: self.view.frame.width, height: self.view.frame.height)
-        
-        dataViewController.dataObject = self.tabs["TOP"]
-        
+       // dataViewController.view.frame = CGRect.init(x: 0, y: 164, width: 500, height: 600)// CGRect.init(x: 0, y: Int(self.heightForTabAtIndex(index)), width: self.view.frame.width, height: self.view.frame.height)
+        switch (index) {
+        case self.topTabIndex:
+            dataViewController.dataObject = self.tabs["TOP"]
+            break
+        case self.newTabIndex:
+            dataViewController.dataObject = self.tabs["NEW"]
+            break
+        case self.periodQuestionsTabIndex :
+            dataViewController.dataObject = self.tabs["PERIOD QUESTIONS"]
+            break
+        case self.offTopicTabIndex :
+            dataViewController.dataObject = self.tabs["OFF-TOPIC"]
+            break
+        default :
+            break
+        }
         return dataViewController
     }
     
@@ -116,7 +150,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     func widthForTabAtIndex(_ index: Int) -> CGFloat {
         var tabSize = self.tabNames[index].size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)])
             
-        tabSize.width += 32
+        tabSize.width += 16
             
         return tabSize.width
         
@@ -140,7 +174,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     override var tabbarStyle: RGTabbarStyle {
         get {
-            return .blurred
+            return .solid
         }
     }
     
@@ -158,7 +192,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     override var tabStyle: RGTabStyle {
         get {
-            return .inactiveFaded
+            return .none
         }
     }
     

@@ -16,5 +16,12 @@ class TopTabTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var heartIconImageView: UIImageView!
+    @IBOutlet weak var conversationIconImageView: UIImageView!
+    @IBOutlet weak var viewCountIconImageView: UIImageView!
+    
+    
+    
+    
     
 }

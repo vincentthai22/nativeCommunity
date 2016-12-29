@@ -19,9 +19,9 @@ class DataTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let askTheCommunityButton = UIButton.init(frame: CGRect.init(x: 250, y: 400, width: 200, height: 100))
-        askTheCommunityButton.imageView?.image = #imageLiteral(resourceName: "ask_the_community")
-        self.view.addSubview(askTheCommunityButton)
+//        let askTheCommunityButton = UIButton.init(frame: CGRect.init(x: 250, y: 400, width: 200, height: 100))
+//        askTheCommunityButton.imageView?.image = #imageLiteral(resourceName: "ask_the_community")
+//        self.view.addSubview(askTheCommunityButton)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataObject.count
@@ -40,6 +40,25 @@ class DataTableViewController: UITableViewController {
         cell2.descriptionLabel.text = post[self.dataStrings[self.descriptionIndex]] as! String?
         cell2.usernameLabel.text = post[self.dataStrings[self.usernameIndex]] as! String?
         cell2.categoryLabel.text = post[ self.dataStrings[self.categoryIndex]] as! String?
+        
+        DispatchQueue.global().async {
+            var profileImg : UIImage?, heartIconImg:UIImage?, conversationIconImg:UIImage?, viewsIconImg:UIImage?
+            do {
+                try profileImg = UIImage.init(data: NSData.init(contentsOf: NSURL.init(fileURLWithPath: "http://www.contestofchampions.net/wp-content/themes/The-Boiler-0.1_Vorkshop/images/icon_ddu_off.svg") as URL) as Data)
+            } catch {
+                profileImg = #imageLiteral(resourceName: "person_icon")
+            }
+            heartIconImg = #imageLiteral(resourceName: "heart_icon")
+            conversationIconImg = #imageLiteral(resourceName: "conversation_icon")
+            viewsIconImg = #imageLiteral(resourceName: "eye_icon")
+            DispatchQueue.main.sync {
+                cell2.profileImageView.image = profileImg
+                cell2.heartIconImageView.image = heartIconImg
+                cell2.conversationIconImageView.image = conversationIconImg
+                cell2.viewCountIconImageView.image = viewsIconImg
+            }
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
