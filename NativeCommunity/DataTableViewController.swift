@@ -14,7 +14,41 @@ class DataTableViewController: UITableViewController {
     //2-D Array holding data for each individual post which will then be loaded into each individual table cell
     
     var dataObject : [[String : AnyObject]]!
+    let dataStrings = ["question", "description", "username", "category"]
+    let questionIndex = 0, descriptionIndex = 1, usernameIndex = 2, categoryIndex = 3
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let askTheCommunityButton = UIButton.init(frame: CGRect.init(x: 250, y: 400, width: 200, height: 100))
+        askTheCommunityButton.imageView?.image = #imageLiteral(resourceName: "ask_the_community")
+        self.view.addSubview(askTheCommunityButton)
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataObject.count
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return " "
+    }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let cell2 = cell as! TopTabTableViewCell
+        let post = dataObject[indexPath.row]
+        
+        
+        cell2.questionLabel.text = post[self.dataStrings[self.questionIndex]] as! String?
+        cell2.descriptionLabel.text = post[self.dataStrings[self.descriptionIndex]] as! String?
+        cell2.usernameLabel.text = post[self.dataStrings[self.usernameIndex]] as! String?
+        cell2.categoryLabel.text = post[ self.dataStrings[self.categoryIndex]] as! String?
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "TopTabTableViewCell"
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TopTabTableViewCell
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print ("selected row \(indexPath.row)")
+    }
     
 }

@@ -10,42 +10,58 @@ import UIKit
 
 class MainViewController: RGPageViewController, RGPageViewControllerDataSource, RGPageViewControllerDelegate {
     
-    // 2-D an array of dictionaries, each dictionary holds information related to post
+    /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     * Data structure process: 1)Retrieve and store data     2) Determine when and which set of data to load.
+     * Server call --> data array --> tabs dictionary --> repeat for each tab
+     *
+     * Retrieve and store data -- if "TOP" tab is the desired data to be loaded, load all posts into the "data" array then store this data into the "tabs" dictionary respective to its key, in this case its "TOP".
+     * Determine which set of data -- The current pageIndex from viewControllerForPageIndex (current tab) will determine which set of data is to be loaded and which view to be displayed.
+     *--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     */
+    
+    // an array of dictionaries, each dictionary holds information related to post
     var data: [[String: AnyObject]] = []
+    
     //Dictionary that holds a 2-D array of dictionaries respective to each tab.
     var tabs = ["TOP" : [[String : AnyObject]](), "NEW" : [[String : AnyObject]](), "PERIOD QUESTIONS" : [[String:AnyObject]]()]
-    //tab names
-    let tabNames = ["TOP", "NEW", "PERIOD QUESTIONS", "OFF-TOPIC"]
-    let post1 = [String : String]()
     
-    //Dummy variables
-    let testPost = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Rosalyn", "category" : "Ask the Community"]
+    //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
+    let tabNames = ["TOP", "NEW", "PERIOD QUESTIONS", "OFF-TOPIC"]
+    
+    
+    @IBOutlet weak var navItem: UINavigationItem!
+    
+    
+    //Dummy data
+    let testPost = ["question" : "Appreciation month GIFTS!", "description" : "Hello hello! So as we all know, November is appreciation month asdasdasd", "username" : "Rosalyn", "category" : "Ask the Community"]
     let testPost2 = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "girlboss", "category" : "Period Questions"]
-    let testPost3 = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...","username" : "Gal", "category" : "Off-Topic"]
-    let testPost4 = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"]
-    let testPost5 = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Eliza Hamilton", "category" : "Trending"]
+    let testPost3 = ["question" : "How can I deal with anger?", "description" : "My family pisses me off. my mom is quite possibly the most asdasdasd","username" : "Gal", "category" : "Off-Topic"]
+    let testPost4 = ["question" : "Cramping before period? Did you have implantation cramping before your periodasdasd", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"]
+    let testPost5 = ["question" : "Tampons. Um.", "description" : "Mabye this is a bit tmi but here goes. So my period just started...", "username" : "Eliza Hamilton", "category" : "Trending"]
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.currentTabIndex = 3
+        self.currentTabIndex = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.currentTabIndex = 3
+        self.currentTabIndex = 0
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>]
-        self.tabs["TOP"] = self.data
         self.datasource = self
         self.delegate = self
+        self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>]
+        self.tabs["TOP"] = self.data
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navItem.titleView?.tintColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,7 +99,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard!.instantiateViewController(withIdentifier: "DataTableViewController") as! DataTableViewController
-        
+        dataViewController.view.frame = CGRect.init(x: 0, y: 164, width: 500, height: 1000)// CGRect.init(x: 0, y: Int(self.heightForTabAtIndex(index)), width: self.view.frame.width, height: self.view.frame.height)
         
         dataViewController.dataObject = self.tabs["TOP"]
         
