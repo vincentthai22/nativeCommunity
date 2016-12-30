@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DataTableViewController: UITableViewController {
+class CommunityFrontPageTableViewController: UITableViewController {
     
     //2-D Array holding data for each individual post which will then be loaded into each individual table cell
     

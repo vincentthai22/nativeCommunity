@@ -10,9 +10,10 @@ import UIKit
 
 class MainViewController: RGPageViewController, RGPageViewControllerDataSource, RGPageViewControllerDelegate {
     
-    /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     * Data structure process: 1)Retrieve and store data     2) Determine when and which set of data to load.
-     * Server call --> data array --> tabs dictionary --> repeat for each tab
+    /* Data structure process:
+     *--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     * 1)Retrieve and store data     2) Determine when and which set of data to load.
+     * Server call --> 'data' array --> 'tabs' dictionary --> repeat for each tab on page viewer
      *
      * Retrieve and store data -- if "TOP" tab is the desired data to be loaded, load all posts into the "data" array then store this data into the "tabs" dictionary respective to its key, in this case its "TOP".
      * Determine which set of data -- The current pageIndex from viewControllerForPageIndex (current tab) will determine which set of data is to be loaded and which view to be displayed.
@@ -30,8 +31,13 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     let topTabIndex = 0, newTabIndex = 1, periodQuestionsTabIndex = 2, offTopicTabIndex = 3
     
+    var askTheCommunityButtonn :UIButton?
+    
+    
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var askTheCommunityButton: UIButton!
+    
+    
     
     
     //Dummy data
@@ -62,8 +68,13 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>, self.testPost6 as Dictionary<String, AnyObject>]
         self.tabs["TOP"] = self.data
         self.view.bringSubview(toFront: self.askTheCommunityButton)
+       //self.askTheCommunityButton.addTarget(self, action: #selector(askTheCommunityButtonHandler), for: UIControlEvents.touchUpInside)
+        
         setupNavBar()
         
+    }
+    @IBAction func askTheCommunityButton(_ sender: UIButton) {
+        print("yes")    
     }
     
     func setupNavBar() -> Void {
@@ -78,12 +89,15 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     func profileImageButtonHandler() {
         
         print ("Profile image clicked")
-        
+        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.present(nextViewController, animated: true, completion: nil)
     }
     
-    @IBAction func askTheCommunityButtonActionHandler(_ sender: UIButton) {
-        
-    }
+//    @IBAction func askTheCommunityButtonActionHandler(_ sender: UIButton) {
+//        let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "AskTheCommunityViewController") as! AskTheCommunityViewController
+//        self.present(nextViewController, animated: true, completion: nil)
+//    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -119,8 +133,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         }
         
         // Create a new view controller and pass suitable data.
-        let dataViewController = storyboard!.instantiateViewController(withIdentifier: "DataTableViewController") as! DataTableViewController
-       // dataViewController.view.frame = CGRect.init(x: 0, y: 164, width: 500, height: 600)// CGRect.init(x: 0, y: Int(self.heightForTabAtIndex(index)), width: self.view.frame.width, height: self.view.frame.height)
+        let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "CommunityFrontPageTableViewController") as! CommunityFrontPageTableViewController
         switch (index) {
         case self.topTabIndex:
             dataViewController.dataObject = self.tabs["TOP"]

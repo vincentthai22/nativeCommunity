@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3125EA1E15CEEF0015F16F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3125E91E15CEEF0015F16F /* ProfileViewController.swift */; };
+		BF3125EC1E15DC2B0015F16F /* ProfilePagePageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3125EB1E15DC2B0015F16F /* ProfilePagePageViewer.swift */; };
+		BF3125EE1E15DE750015F16F /* ProfilePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3125ED1E15DE750015F16F /* ProfilePageTableViewController.swift */; };
+		BF3125F01E15E8F90015F16F /* ProfileTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3125EF1E15E8F90015F16F /* ProfileTabTableViewCell.swift */; };
 		BF361E331E15A12A003F9EFA /* AskTheCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */; };
 		BFD611E11E1446E40054A0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E01E1446E40054A0FB /* AppDelegate.swift */; };
 		BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E21E1446E40054A0FB /* MainViewController.swift */; };
@@ -17,7 +21,7 @@
 		BFD612011E1446E40054A0FB /* NativeCommunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD612001E1446E40054A0FB /* NativeCommunityUITests.swift */; };
 		BFD612101E1447310054A0FB /* RGPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6120F1E1447310054A0FB /* RGPageViewController.swift */; };
 		BFD612121E1461C70054A0FB /* TopTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD612111E1461C70054A0FB /* TopTabTableViewCell.swift */; };
-		BFD612161E1462280054A0FB /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD612151E1462280054A0FB /* DataTableViewController.swift */; };
+		BFD612161E1462280054A0FB /* CommunityFrontPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD612151E1462280054A0FB /* CommunityFrontPageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF3125E91E15CEEF0015F16F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF3125EB1E15DC2B0015F16F /* ProfilePagePageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePagePageViewer.swift; sourceTree = "<group>"; };
+		BF3125ED1E15DE750015F16F /* ProfilePageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageTableViewController.swift; sourceTree = "<group>"; };
+		BF3125EF1E15E8F90015F16F /* ProfileTabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTabTableViewCell.swift; sourceTree = "<group>"; };
 		BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskTheCommunityViewController.swift; sourceTree = "<group>"; };
 		BFD611DD1E1446E40054A0FB /* NativeCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD611E01E1446E40054A0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +62,7 @@
 		BFD612021E1446E40054A0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFD6120F1E1447310054A0FB /* RGPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGPageViewController.swift; sourceTree = "<group>"; };
 		BFD612111E1461C70054A0FB /* TopTabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTabTableViewCell.swift; sourceTree = "<group>"; };
-		BFD612151E1462280054A0FB /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
+		BFD612151E1462280054A0FB /* CommunityFrontPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityFrontPageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				BFD611E01E1446E40054A0FB /* AppDelegate.swift */,
+				BF3125E91E15CEEF0015F16F /* ProfileViewController.swift */,
+				BF3125EB1E15DC2B0015F16F /* ProfilePagePageViewer.swift */,
+				BF3125ED1E15DE750015F16F /* ProfilePageTableViewController.swift */,
 				BFD611E21E1446E40054A0FB /* MainViewController.swift */,
-				BFD612151E1462280054A0FB /* DataTableViewController.swift */,
+				BFD612151E1462280054A0FB /* CommunityFrontPageTableViewController.swift */,
 				BF361E321E15A12A003F9EFA /* AskTheCommunityViewController.swift */,
 				BFD612111E1461C70054A0FB /* TopTabTableViewCell.swift */,
+				BF3125EF1E15E8F90015F16F /* ProfileTabTableViewCell.swift */,
 				BFD611E41E1446E40054A0FB /* Main.storyboard */,
 				BFD611E71E1446E40054A0FB /* Assets.xcassets */,
 				BFD611E91E1446E40054A0FB /* LaunchScreen.storyboard */,
@@ -279,10 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFD612161E1462280054A0FB /* DataTableViewController.swift in Sources */,
+				BFD612161E1462280054A0FB /* CommunityFrontPageTableViewController.swift in Sources */,
+				BF3125EE1E15DE750015F16F /* ProfilePageTableViewController.swift in Sources */,
 				BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */,
 				BF361E331E15A12A003F9EFA /* AskTheCommunityViewController.swift in Sources */,
+				BF3125EC1E15DC2B0015F16F /* ProfilePagePageViewer.swift in Sources */,
 				BFD612121E1461C70054A0FB /* TopTabTableViewCell.swift in Sources */,
+				BF3125EA1E15CEEF0015F16F /* ProfileViewController.swift in Sources */,
+				BF3125F01E15E8F90015F16F /* ProfileTabTableViewCell.swift in Sources */,
 				BFD612101E1447310054A0FB /* RGPageViewController.swift in Sources */,
 				BFD611E11E1446E40054A0FB /* AppDelegate.swift in Sources */,
 			);
