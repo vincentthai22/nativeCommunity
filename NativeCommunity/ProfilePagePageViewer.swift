@@ -24,30 +24,43 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     // an array of dictionaries, each dictionary holds information related to post
     var data: [[String: AnyObject]] = []
     
-    //Dictionary that holds a 2-D array of dictionaries respective to each tab.
+    //Dictionary that holds an array of dictionaries respective to each tab.
     var tabs = ["PROFILE" : [[String : AnyObject]](), "POSTS" : [[String : AnyObject]](), "COMMENTS" : [[String:AnyObject]](), "SETTINGS" : [[String : AnyObject]]()]
-    
+    var profileTab = [String:AnyObject]()
     //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
     let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
     
     let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     
     //Dummy data
-    let testPost = ["AboutMe" : "Appreciation month GIFTS!", "Birthday" : "Hello hello! So as we all know, November is appreciation month asdasdasd", "Location" : "Rosalyn", "Interests" : "Ask the Community"]
-    
+    let testProfileData = ["About Me" : "Hi I'm Jilian and my favorite thing in the world is to dance", "Birthday" : "Oct 17, 1993 (23)", "Location" : "San Marino, CA", "Interests" : "dancing, picnics, music"]
+    let testPostsData = [[ "title" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now . . .", "time" : "2 mins ago in" , "category" : "Period Questions"], ["title" : "Should I be worred?", "description" : "Hello guys I am new to the period community but I thought", "time" : "3 weeks ago in" , "category" : "Period Questions"], ["title" : "Cramping before period? Did you have implantation cramping before your period?", "description" : " ", "time" : "8 months ago" , "category" : "Period Questions"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.datasource = self
         self.delegate = self
-        self.data = [self.testPost as Dictionary<String, AnyObject>]
-        self.tabs["PROFILE"] = self.data
+        self.data = [self.testProfileData as Dictionary<String, AnyObject>]
+        self.profileTab = self.testProfileData as [String : AnyObject]
+        self.tabs[self.tabNames[profileTabIndex]] = self.data
+        self.tabs[self.tabNames[postsTabIndex]] = self.testPostsData as [[String : AnyObject]]?
+        self.tabbar.frame = CGRect.init(x: 0, y: -3, width: view.bounds.width, height: self.tabbarHeight)
     }
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        self.currentTabIndex = 1
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.currentTabIndex = 1
+    }
     // MARK: - RGPageViewController Data Source
     func numberOfPagesForViewController(_ pageViewController: RGPageViewController) -> Int {
-        return tabNames.count
+        return self.tabNames.count
     }
     
     func tabViewForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIView {
@@ -56,17 +69,20 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
         tabView = UILabel()
         
         (tabView as! UILabel).font = UIFont.systemFont(ofSize: 14)
-        (tabView as! UILabel).text = tabNames[index]
+        (tabView as! UILabel).text = self.tabNames[index]
+        (tabView as! UILabel).textColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
         
         (tabView as! UILabel).sizeToFit()
         
+        print ("index \(index)")
         
         return tabView
     }
     
     
     func viewControllerForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIViewController? {
-        if (data.count == 0) || (index >= data.count) {
+        if (self.tabNames.count == 0) || (index >= self.tabNames.count) {
+            print ("index is \(index)")
             return nil
         }
         
@@ -74,16 +90,20 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
         let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
         switch (index) {
         case self.profileTabIndex:
-            dataViewController.dataObject = self.tabs["PROFILE"]
+            dataViewController.currentTab = self.tabNames[self.profileTabIndex]
+            dataViewController.profileDataObject = self.profileTab
             break
         case self.postsTabIndex:
-            dataViewController.dataObject = self.tabs["POSTS"]
+            dataViewController.currentTab = self.tabNames[self.postsTabIndex]
+            dataViewController.dataObject = self.tabs["POSTS"]!
             break
         case self.commentsTabIndex :
-            dataViewController.dataObject = self.tabs["COMMENTS"]
+            dataViewController.currentTab = self.tabNames[self.commentsTabIndex]
+            dataViewController.dataObject = self.tabs["COMMENTS"]!
             break
         case self.settingsTabIndex :
-            dataViewController.dataObject = self.tabs["SETTINGS"]
+            dataViewController.currentTab = self.tabNames[self.commentsTabIndex]
+            dataViewController.dataObject = self.tabs["SETTINGS"]!
             break
         default :
             break
@@ -94,7 +114,7 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     // MARK: - RGPageViewController Delegate
     // use this to set a custom height for the tabbar
     func heightForTabAtIndex(_ index: Int) -> CGFloat {
-        return 164.0
+        return 120.0
     }
     
     // use this to set a custom width for a tab
@@ -131,7 +151,7 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     
     override var tabIndicatorColor: UIColor {
         get {
-            return UIColor.black
+            return UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
         }
     }
     

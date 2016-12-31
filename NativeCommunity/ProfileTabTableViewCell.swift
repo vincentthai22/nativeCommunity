@@ -11,4 +11,6 @@ import UIKit
 
 class ProfileTabTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var sectionLabel: UILabel!
 }

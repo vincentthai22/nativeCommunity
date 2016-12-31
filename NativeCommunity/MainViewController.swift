@@ -103,13 +103,10 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func reloadPager(_ sender: UIBarButtonItem) {
-        reloadData()
-    }
     
     // MARK: - RGPageViewController Data Source
     func numberOfPagesForViewController(_ pageViewController: RGPageViewController) -> Int {
-        return tabNames.count
+        return self.tabNames.count
     }
     
     func tabViewForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIView {
@@ -118,8 +115,8 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
             tabView = UILabel()
             
             (tabView as! UILabel).font = UIFont.systemFont(ofSize: 14)
-            (tabView as! UILabel).text = tabNames[index] 
-            
+            (tabView as! UILabel).text = self.tabNames[index]
+            (tabView as! UILabel).textColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
             (tabView as! UILabel).sizeToFit()
         
         
@@ -193,7 +190,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     override var tabIndicatorColor: UIColor {
         get {
-            return UIColor.black
+            return UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
         }
     }
     
