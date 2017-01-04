@@ -18,11 +18,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profilePageProfileTabView: UIView!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var editProfileButton: UIButton!
     
     var profileData = [String : AnyObject]()
     let profileDataStrings = ["username", "posts", "title"]
     let usernameIndex = 0, postsIndex = 1, titleIndex = 2
     
+    var editProfileBut : UIButton?
+
     var profilePagePageViewController : ProfilePagePageViewController?
     
     override func viewDidLoad() {
@@ -34,9 +37,18 @@ class ProfileViewController: UIViewController {
                 self.profileImageView.image = img
             }
         }
+        self.editProfileBut = UIButton.init(frame: CGRect(x: self.profilePageProfileTabView.frame.maxX - 75, y: self.profilePageProfileTabView.frame.maxY - 75, width: 100, height: 50))
+       // self.view.addSubview(self.editProfileBut!)
+        self.editProfileBut?.titleLabel?.text = "Edit Profileeee"
+        self.editProfileBut?.titleLabel?.textColor = UIColor.white
+        self.editProfileBut?.backgroundColor = UIColor.magenta
+        self.editProfileBut?.setTitle("EditProfile", for: UIControlState.focused)
+        self.editProfileBut?.addTarget(self, action: #selector(editProfileButtonHandler), for: UIControlEvents.touchUpInside)
         self.profilePagePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProfilePagePageViewController") as! ProfilePagePageViewController?
         print ("is my profile page viewcontroller being presented? \(self.profilePagePageViewController?.isBeingPresented)")
         self.profilePageProfileTabView.addSubview((self.profilePagePageViewController?.view)!)
+        self.profilePageProfileTabView.addSubview(self.editProfileBut!)
+        self.profilePageProfileTabView.bringSubview(toFront: self.editProfileBut!)
         let backButton = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action: #selector(backButtonHandler))
         self.navItem.leftBarButtonItem = backButton
         setupNavBar()
@@ -48,7 +60,9 @@ class ProfileViewController: UIViewController {
         self.numberOfPostsLabel.text = (self.profileData[self.profileDataStrings[self.postsIndex]] as? String)?.appending(" posts ")
         self.titleLabel.text = self.profileData[self.profileDataStrings[self.titleIndex]] as? String
     }
-    
+    func editProfileButtonHandler () {
+        print("editprof pressed")
+    }
     func setupNavBar() -> Void {
         
 //        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
@@ -63,4 +77,5 @@ class ProfileViewController: UIViewController {
     func backButtonHandler(){
         self.dismiss(animated: true, completion: nil)
     }
+    
 }

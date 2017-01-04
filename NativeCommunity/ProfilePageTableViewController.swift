@@ -46,12 +46,18 @@ class ProfilePageTableViewController: UITableViewController {
         
         if self.currentTab == self.tabNames[profileTabIndex] {
             
+            if indexPath.row == 0 {
+                let statusCell = cell as! StatusTableViewCell
+                statusCell.statusLabel.text = "Hello! Nice to meet you!"
+                
+            } else {
+            
             let cell2 = cell as! ProfileTabTableViewCell
-            let temp = self.profileDataObject[self.profileSectionStrings[self.aboutMeIndex]] as! String?
+            _ = self.profileDataObject[self.profileSectionStrings[self.aboutMeIndex]] as! String?
             cell2.detailsLabel.sizeToFit()
             cell2.detailsLabel.numberOfLines = 0
             
-            switch(indexPath.row){
+            switch(indexPath.row - 1){
                 
             case self.aboutMeIndex:
                 cell2.sectionLabel.text = self.profileSectionStrings[self.aboutMeIndex]
@@ -72,6 +78,7 @@ class ProfilePageTableViewController: UITableViewController {
             default:
                 break
                 
+            }
             }
             
         } else if self.currentTab == self.tabNames[self.postsTabIndex] {
@@ -105,10 +112,15 @@ class ProfilePageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.currentTab == self.tabNames[self.profileTabIndex] {
+            
+            if indexPath.row == 0 {
+                let cellIdentifier = "StatusTableViewCell"
+                let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! StatusTableViewCell
+                return cell
+            }
             let cellIdentifier = "ProfileTabTableViewCell"
             let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProfileTabTableViewCell
             cell.detailsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            cell.detailsLabel.numberOfLines = 0
             return cell
         } else if self.currentTab == self.tabNames[self.postsTabIndex] {
             let cellIdentifier = "PostsTabTableViewCell"
