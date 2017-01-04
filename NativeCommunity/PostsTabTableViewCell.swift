@@ -1,5 +1,5 @@
 //
-//  PostsTableViewCell.swift
+//  File.swift
 //  NativeCommunity
 //
 //  Created by Vincent on 12/30/16.
@@ -9,12 +9,10 @@
 import Foundation
 import UIKit
 
-class PostsTableViewCell: UITableViewCell {
-    
+class PostsTabTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    
     
 }

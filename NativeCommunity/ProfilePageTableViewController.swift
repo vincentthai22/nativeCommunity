@@ -12,7 +12,7 @@ import UIKit
 class ProfilePageTableViewController: UITableViewController {
     
     var profileDataObject = [String : AnyObject]()
-    var dataObject : [[String : AnyObject]] = []
+    var dataObject = [[String : AnyObject]]()
     let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
     let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     let profileSectionStrings = ["About Me", "Birthday", "Location", "Interests"]
@@ -59,13 +59,16 @@ class ProfilePageTableViewController: UITableViewController {
                 break
             }
         } else if self.currentTab == self.tabNames[self.postsTabIndex] {
-            let cell2 = cell as! PostsTableViewCell
+            let cell2 = cell as! PostsTabTableViewCell
             cell2.titleLabel.text = self.dataObject[indexPath.row][self.postsSectionStrings[self.titleIndex]] as! String?
             cell2.descriptionLabel.text = self.dataObject[indexPath.row][self.postsSectionStrings[self.descriptionIndex]] as! String?
             cell2.timeLabel.text = self.dataObject[indexPath.row][self.postsSectionStrings[self.timeIndex]] as! String?
             cell2.categoryLabel.text = self.dataObject[indexPath.row][self.postsSectionStrings[self.categoryIndex]] as! String?
     
         } else if self.currentTab == self.tabNames[self.commentsTabIndex] {
+            let cell2 = cell as! CommentsTableViewCell
+            cell2.categoryLabel.text = "yasss"
+            cell2.commentsLabel.text = "yessss"
             
         } else {
             
@@ -82,8 +85,8 @@ class ProfilePageTableViewController: UITableViewController {
             cell.detailsLabel.numberOfLines = 0
             return cell
         } else if self.currentTab == self.tabNames[self.postsTabIndex] {
-            let cellIdentifier = "PostsTableViewCell"
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostsTableViewCell
+            let cellIdentifier = "PostsTabTableViewCell"
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostsTabTableViewCell
             return cell
         } else {
             let cellIdentifier = "CommentsTableViewCell"

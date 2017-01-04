@@ -291,7 +291,7 @@
                                 <rect key="frame" x="0.0" y="37" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gEF-ch-j9e" id="1Xc-jY-u9P">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" text="SectionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yat-9f-WFy">
@@ -316,65 +316,11 @@
                                     <outlet property="sectionLabel" destination="yat-9f-WFy" id="wcy-M2-t2m"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostsTableViewCell" id="FKb-Rp-Pjw" customClass="PostsTableViewCell" customModule="NativeCommunity" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentsTableViewCell" id="uZX-ar-Duy" customClass="CommentsTableViewCell" customModule="NativeCommunity" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="137" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKb-Rp-Pjw" id="yYy-KQ-Vcr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="postTitleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVd-Qy-MjK">
-                                            <rect key="frame" x="8" y="8" width="108" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="postDescriptionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqM-kX-hJH">
-                                            <rect key="frame" x="8" y="29" width="164" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJ8-J0-khd">
-                                            <rect key="frame" x="8" y="71" width="75" height="21"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="timeLabel"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="categoryLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8k-eY-JSs">
-                                            <rect key="frame" x="150" y="71" width="109.5" height="21"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="categoryLabel"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="S8k-eY-JSs" secondAttribute="bottom" id="8Rw-2u-2F5"/>
-                                        <constraint firstItem="S8k-eY-JSs" firstAttribute="leading" secondItem="cJ8-J0-khd" secondAttribute="trailing" constant="67" id="JYG-Of-oLm"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="cJ8-J0-khd" secondAttribute="leading" id="hbR-Ef-hX8"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cJ8-J0-khd" secondAttribute="bottom" id="kTO-wv-vOg"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="categoryLabel" destination="S8k-eY-JSs" id="oUg-yD-Qya"/>
-                                    <outlet property="descriptionLabel" destination="hqM-kX-hJH" id="Hd4-Rq-Jcz"/>
-                                    <outlet property="postCategoryLabel" destination="yYy-KQ-Vcr" id="CjV-pW-TFm"/>
-                                    <outlet property="postDescriptionLabel" destination="yYy-KQ-Vcr" id="hLF-cg-CLO"/>
-                                    <outlet property="postTimeLabel" destination="yYy-KQ-Vcr" id="588-y4-YYK"/>
-                                    <outlet property="postTitleLabel" destination="yYy-KQ-Vcr" id="Cj9-8x-Oou"/>
-                                    <outlet property="timeLabel" destination="cJ8-J0-khd" id="q6t-7s-Rxz"/>
-                                    <outlet property="titleLabel" destination="rVd-Qy-MjK" id="cwj-b5-igS"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentsTableViewCell" id="uZX-ar-Duy" customClass="CommentsTableViewCell" customModule="NativeCommunity" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="237" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uZX-ar-Duy" id="tKv-AQ-Bbh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="commentLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-xE-Q4M">
@@ -410,6 +356,54 @@
                                     <outlet property="heartImageView" destination="5K2-jv-X2I" id="MIn-uK-j1V"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostsTabTableViewCell" id="5pV-Sb-46C" customClass="PostsTabTableViewCell" customModule="NativeCommunity" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="237" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5pV-Sb-46C" id="rLD-kK-8z8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="descriptionLabel" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn7-tn-zlx">
+                                            <rect key="frame" x="8" y="23" width="400" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="titleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w49-mg-Jag">
+                                            <rect key="frame" x="8" y="8" width="375" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="timeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofh-mv-HAA">
+                                            <rect key="frame" x="8" y="68" width="124" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="categoryLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8t6-vF-HfU">
+                                            <rect key="frame" x="144" y="68" width="110" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Ofh-mv-HAA" secondAttribute="leading" id="CeP-GR-pCS"/>
+                                        <constraint firstItem="8t6-vF-HfU" firstAttribute="leading" secondItem="Ofh-mv-HAA" secondAttribute="trailing" constant="12" id="bW5-Uj-JYC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ofh-mv-HAA" secondAttribute="bottom" constant="2" id="osu-vS-1sh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8t6-vF-HfU" secondAttribute="bottom" constant="2" id="sX7-3m-Bbn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="8t6-vF-HfU" id="5v0-jF-fF2"/>
+                                    <outlet property="descriptionLabel" destination="kn7-tn-zlx" id="RLF-Eq-Uxw"/>
+                                    <outlet property="timeLabel" destination="Ofh-mv-HAA" id="aVY-0M-1tP"/>
+                                    <outlet property="titleLabel" destination="w49-mg-Jag" id="bdS-U9-8oC"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="tsG-qw-8mn" id="59N-iZ-qOG"/>
@@ -419,7 +413,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAv-xk-v1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="485.30734632683664"/>
+            <point key="canvasLocation" x="1728.8" y="494.30284857571218"/>
         </scene>
         <!--Community-->
         <scene sceneID="yid-gg-F8a">
