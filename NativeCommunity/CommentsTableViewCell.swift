@@ -12,6 +12,7 @@ class CommentsTableViewCell: UITableViewCell {
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var heartImageView: UIImageView!
+    @IBOutlet weak var likesNumberLabel: UILabel!
     
     
 }

@@ -128,36 +128,36 @@ class RGPageViewController: UIViewController, UIPageViewControllerDataSource, UI
         super.loadView()
         
         // init pager
-        pager = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: pagerOrientation, options: nil)
+        self.pager = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: pagerOrientation, options: nil)
         
         addChildViewController(pager)
         
-        pagerScrollView = pager.view.subviews[0] as! UIScrollView
-        pageViewScrollDelegate = pagerScrollView.delegate
+        self.pagerScrollView = pager.view.subviews[0] as! UIScrollView
+        self.pageViewScrollDelegate = self.pagerScrollView.delegate
         
-        pagerScrollView.scrollsToTop = false
-        pagerScrollView.delegate = self
+        self.pagerScrollView.scrollsToTop = false
+        self.pagerScrollView.delegate = self
         
         // init tabbar
-        switch tabbarStyle {
+        switch self.tabbarStyle {
         case .blurred:
-            tabbar = UIToolbar()
+            self.tabbar = UIToolbar()
             
-            if let bar = tabbar as? UIToolbar {
-                bar.barTintColor = barTintColor
+            if let bar = self.tabbar as? UIToolbar {
+                bar.barTintColor = self.barTintColor
                 bar.isTranslucent = true
                 bar.delegate = self
             }
         case .solid:
-            tabbar = UIView()
+            self.tabbar = UIView()
             
-            tabbar.backgroundColor = barTintColor
+            self.tabbar.backgroundColor = barTintColor
         }
         
-        tabbar.isHidden = tabbarHidden
+        self.tabbar.isHidden = self.tabbarHidden
         
         // layout
-        switch tabbarPosition {
+        switch self.tabbarPosition {
         case .top:
             layoutTabbarTop()
             break
@@ -172,17 +172,17 @@ class RGPageViewController: UIViewController, UIPageViewControllerDataSource, UI
             break
         }
         
-        tabScrollView.backgroundColor = UIColor.clear
-        tabScrollView.scrollsToTop = false
-        tabScrollView.isOpaque = false
-        tabScrollView.showsHorizontalScrollIndicator = false
-        tabScrollView.showsVerticalScrollIndicator = false
-        tabScrollView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "rgTabCell")
+        self.tabScrollView.backgroundColor = UIColor.clear
+        self.tabScrollView.scrollsToTop = false
+        self.tabScrollView.isOpaque = false
+        self.tabScrollView.showsHorizontalScrollIndicator = false
+        self.tabScrollView.showsVerticalScrollIndicator = false
+        self.tabScrollView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "rgTabCell")
         
-        tabbar.addSubview(tabScrollView)
+        self.tabbar.addSubview(self.tabScrollView)
         
-        view.addSubview(pager.view)
-        view.addSubview(tabbar)
+        view.addSubview(self.pager.view)
+        view.addSubview(self.tabbar)
     }
     
     override func viewDidLoad() {
@@ -192,7 +192,7 @@ class RGPageViewController: UIViewController, UIPageViewControllerDataSource, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if needsSetup {
+        if self.needsSetup {
             setupSelf()
         }
     }

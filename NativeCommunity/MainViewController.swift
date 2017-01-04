@@ -21,7 +21,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
      */
     
     // an array of dictionaries, each dictionary holds information related to post
-    var data: [[String: AnyObject]] = []
+    var data = [[String: AnyObject]]()
     
     //Dictionary that holds a 2-D array of dictionaries respective to each tab.
     var tabs = ["TOP" : [[String : AnyObject]](), "NEW" : [[String : AnyObject]](), "PERIOD QUESTIONS" : [[String:AnyObject]](), "OFF-TOPIC" : [[String : AnyObject]]()]
@@ -41,13 +41,10 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     
     //Dummy data
-    let testPost = ["question" : "Appreciation month GIFTS!", "description" : "Hello hello! So as we all know, November is appreciation month asdasdasd", "username" : "Rosalyn", "category" : "Ask the Community"]
-    let testPost2 = ["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "girlboss", "category" : "Period Questions"]
-    let testPost3 = ["question" : "How can I deal with anger?", "description" : "My family pisses me off. my mom is quite possibly the most asdasdasd","username" : "Gal", "category" : "Off-Topic"]
-    let testPost4 = ["question" : "Cramping before period? Did you have implantation cramping before your periodasdasd", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"]
-    let testPost5 = ["question" : "Tampons. Um.", "description" : "Mabye this is a bit tmi but here goes. So my period just started...", "username" : "Eliza Hamilton", "category" : "Trending"]
-    let testPost6 = ["question" : "blablablalblalbalbla", "description" : "lalalalalalala", "username" : "lala", "category" : "Off-Topic"]
+    let testPosts = [["question" : "Appreciation month GIFTS!", "description" : "Hello hello! So as we all know, November is appreciation month asdasdasd", "username" : "Rosalyn", "category" : "Ask the Community"],["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "girlboss", "category" : "Period Questions"],["question" : "How can I deal with anger?", "description" : "My family pisses me off. my mom is quite possibly the most asdasdasd","username" : "Gal", "category" : "Off-Topic"],["question" : "Cramping before period? Did you have implantation cramping before your periodasdasd", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"], ["question" : "Tampons. Um.", "description" : "Mabye this is a bit tmi but here goes. So my period just started...", "username" : "Elizabeth", "category" : "Trending"],["question" : "blablablalblalbalbla", "description" : "lalalalalalala", "username" : "lala", "category" : "Off-Topic"],["question" : "Appreciation month GIFTS!", "description" : "Hello hello! So as we all know, November is appreciation month asdasdasd", "username" : "Rosalyn", "category" : "Ask the Community"],["question" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "girlboss", "category" : "Period Questions"],["question" : "How can I deal with anger?", "description" : "My family pisses me off. my mom is quite possibly the most asdasdasd","username" : "Gal", "category" : "Off-Topic"],["question" : "Cramping before period? Did you have implantation cramping before your periodasdasd", "description" : "I've been on Lutera (BC pills) for about two months now af...", "username" : "Nina", "category" : "Expecting Moms"], ["question" : "Tampons. Um.", "description" : "Mabye this is a bit tmi but here goes. So my period just started...", "username" : "Elizabeth", "category" : "Trending"],["question" : "blablablalblalbalbla", "description" : "lalalalalalala", "username" : "lala", "category" : "Off-Topic"]]
     
+    
+    let profileData = ["username" : "Jillian.99", "posts" : "240", "title" : "Little Gardener"]
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -65,7 +62,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         super.viewDidLoad()
         self.datasource = self
         self.delegate = self
-        self.data = [self.testPost as Dictionary<String, AnyObject>, self.testPost2 as Dictionary<String, AnyObject>, self.testPost3 as Dictionary<String, AnyObject>, self.testPost4 as Dictionary<String, AnyObject>, self.testPost5 as Dictionary<String, AnyObject>, self.testPost6 as Dictionary<String, AnyObject>]
+        self.data = self.testPosts as [[String : AnyObject]]
         self.tabs["TOP"] = self.data
         self.view.bringSubview(toFront: self.askTheCommunityButton)
        //self.askTheCommunityButton.addTarget(self, action: #selector(askTheCommunityButtonHandler), for: UIControlEvents.touchUpInside)
@@ -79,18 +76,25 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     func setupNavBar() -> Void {
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navItem.titleView?.tintColor = UIColor.white
-        self.navItem.rightBarButtonItem = UIBarButtonItem.init(title: "profileImage", style: .plain, target: self, action: #selector(profileImageButtonHandler))
+        self.navItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "person_icon_small"), style: .plain, target: self, action: #selector(profileImageButtonHandler))
     }
     
     func profileImageButtonHandler() {
-        
+        let transition = CATransition.init()
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        transition.type = kCATransitionFromRight
+        self.navigationController?.view.layer.add(transition, forKey: nil)
         print ("Profile image clicked")
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        nextViewController.profileData = self.profileData as [String : AnyObject]
+        //nextViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(nextViewController, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 //    @IBAction func askTheCommunityButtonActionHandler(_ sender: UIButton) {
@@ -110,17 +114,17 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     }
     
     func tabViewForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIView {
-        var tabView: UIView!
+        var tabView : UILabel?
         
-            tabView = UILabel()
+            tabView = UILabel.init()
             
-            (tabView as! UILabel).font = UIFont.systemFont(ofSize: 14)
-            (tabView as! UILabel).text = self.tabNames[index]
-            (tabView as! UILabel).textColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
-            (tabView as! UILabel).sizeToFit()
+            tabView?.font = UIFont.systemFont(ofSize: 14)
+            tabView?.text = self.tabNames[index]
+            tabView?.textColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+            tabView?.sizeToFit()
         
         
-        return tabView
+        return tabView!
     }
     
     

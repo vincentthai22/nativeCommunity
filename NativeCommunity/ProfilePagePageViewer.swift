@@ -26,16 +26,15 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     
     //Dictionary that holds an array of dictionaries respective to each tab.
     var tabs = ["PROFILE" : [[String : AnyObject]](), "POSTS" : [[String : AnyObject]](), "COMMENTS" : [[String:AnyObject]](), "SETTINGS" : [[String : AnyObject]]()]
+    let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
+    let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     var profileTab = [String:AnyObject]()
     //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
-    let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
-    
-    let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     
     //Dummy data
-    let testProfileData = ["About Me" : "Hi I'm Jilian and my favorite thing in the world is to dance", "Birthday" : "Oct 17, 1993 (23)", "Location" : "San Marino, CA", "Interests" : "dancing, picnics, music"]
+    let testProfileData = ["About Me" : "Hi I'm Jilian and my favorite thing in the world is to dance!", "Birthday" : "Oct 17, 1993 (23)", "Location" : "San Marino, CA", "Interests" : "dancing, picnics, music"]
     let testPostsData = [[ "title" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now . . .", "time" : "2 mins ago in" , "category" : "Period Questions"], ["title" : "Should I be worred?", "description" : "Hello guys I am new to the period community but I thought", "time" : "3 weeks ago in" , "category" : "Period Questions"], ["title" : "Cramping before period? Did you have implantation cramping before your period?", "description" : " ", "time" : "8 months ago" , "category" : "Period Questions"]]
-    let testCommentsData = [["comments" : "No its okay, I thought if someone had the same problem", "category" : "Tampons" ],["comments" : "No its okay, I thought if someone had the same problem", "category" : "Tampons" ],["comments" : "No its okay, I thought if someone had the same problem", "category" : "Tampons" ],["comments" : "No its okay, I thought if someone had the same problem", "category" : "Tampons" ]]
+    let testCommentsData = [["comments" : "No its okay, I thought if someone had the same problem they could tell me. Besides, if I wasn't", "category" : "Tampons", "likes" : "0" ],["comments" : "Do you think it could be becuase your boyfriend problem they could tell me. Besides, if I wasn't...", "category" : "Tampons", "likes" : "0" ],["comments" : "Have a good time! I'm sure you guys will get to see the show or even at least on the board ...", "category" : "I'm going on vacation we're going to the Sha..", "likes" : "0" ],["comments" : "Is it itchy? I used to have a similar condition it turned out to be a second for lorem ipsum, r..", "category" : "Question??", "likes" : "0" ]]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.datasource = self
@@ -65,19 +64,18 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     }
     
     func tabViewForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIView {
-        var tabView: UIView!
+        var tabView: UILabel?
         
         tabView = UILabel()
         
-        (tabView as! UILabel).font = UIFont.systemFont(ofSize: 14)
-        (tabView as! UILabel).text = self.tabNames[index]
-        (tabView as! UILabel).textColor = UIColor.init(red: 1, green: 204/255, blue: 204/255, alpha: 1)
-        
-        (tabView as! UILabel).sizeToFit()
+        tabView?.font = UIFont.systemFont(ofSize: 14)
+        tabView?.text = self.tabNames[index]
+        tabView?.textColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+        tabView?.sizeToFit()
         
         print ("index \(index)")
         
-        return tabView
+        return tabView!
     }
     
     
@@ -91,22 +89,18 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
         let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
         switch (index) {
         case self.profileTabIndex:
-            //let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
             dataViewController.currentTab = self.tabNames[self.profileTabIndex]
             dataViewController.profileDataObject = self.profileTab
             return dataViewController
         case self.postsTabIndex:
-            //let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
             dataViewController.currentTab = self.tabNames[self.postsTabIndex]
             dataViewController.dataObject = self.tabs[self.tabNames[self.postsTabIndex]]!
             return dataViewController
         case self.commentsTabIndex :
-            //let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
             dataViewController.currentTab = self.tabNames[self.commentsTabIndex]
             dataViewController.dataObject = self.tabs[self.tabNames[self.commentsTabIndex]]!
             return dataViewController
         case self.settingsTabIndex :
-            //let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfilePageTableViewController") as! ProfilePageTableViewController
             dataViewController.currentTab = self.tabNames[self.commentsTabIndex]
             dataViewController.dataObject = self.tabs[self.tabNames[self.settingsTabIndex]]!
             return dataViewController

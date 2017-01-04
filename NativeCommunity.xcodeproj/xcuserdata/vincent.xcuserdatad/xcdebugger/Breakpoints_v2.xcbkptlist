@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/MainViewController.swift"
-            timestampString = "504837887.802544"
+            timestampString = "505179781.129814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "viewControllerForPageAtIndex(_:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/MainViewController.swift"
-            timestampString = "504748119.893292"
+            timestampString = "505179781.129814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "MainViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -89,28 +89,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NativeCommunity/MainViewController.swift"
-            timestampString = "504743966.219571"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504836259.72259"
+            timestampString = "505166055.473926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504836259.72259"
+            timestampString = "505166055.473926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504839544.87066"
+            timestampString = "505171022.923812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504836259.72259"
+            timestampString = "505166055.473926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfileViewController.swift"
-            timestampString = "504825720.349258"
+            timestampString = "505174066.014318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "setupNavBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePagePageViewer.swift"
-            timestampString = "504840474.997923"
+            timestampString = "505170892.218199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "viewControllerForPageAtIndex(_:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePagePageViewer.swift"
-            timestampString = "504840474.997923"
+            timestampString = "505170892.218199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "viewControllerForPageAtIndex(_:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504839544.87066"
+            timestampString = "505171022.923812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504838396.276769"
+            timestampString = "505166055.473926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504839835.450193"
+            timestampString = "505171022.923812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,13 +250,269 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NativeCommunity/ProfilePageTableViewController.swift"
-            timestampString = "504839839.747821"
+            timestampString = "505171022.923812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/MainViewController.swift"
+            timestampString = "505179781.129814"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "tabViewForPageAtIndex(_:index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RGPageViewController.swift"
+            timestampString = "505158321.553141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "loadView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/ProfileViewController.swift"
+            timestampString = "505173872.89002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158939.879457"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158939.881704"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/ProfileViewController.swift"
+            timestampString = "505173872.89002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158942.205034"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "239">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158942.207633"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "179">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/ProfileViewController.swift"
+            timestampString = "505173872.89002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158942.735068"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "321">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.ProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/ProfileViewController.swift"
+                  timestampString = "505158942.737729"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "261">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/ProfileViewController.swift"
+            timestampString = "505173872.89002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/CommunityFrontPageTableViewController.swift"
+            timestampString = "505181381.070237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NativeCommunity/CommunityFrontPageTableViewController.swift"
+            timestampString = "505181381.070237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.CommunityFrontPageTableViewController.tableView (__ObjC.UITableView, willDisplay : __ObjC.UITableViewCell, forRowAt : Foundation.IndexPath) -&gt; ()"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/CommunityFrontPageTableViewController.swift"
+                  timestampString = "505177926.830748"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "8660">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NativeCommunity.CommunityFrontPageTableViewController.(tableView (__ObjC.UITableView, willDisplay : __ObjC.UITableViewCell, forRowAt : Foundation.IndexPath) -&gt; ()).(closure #1)"
+                  moduleName = "NativeCommunity"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincent/Desktop/NativeCommunity/NativeCommunity/CommunityFrontPageTableViewController.swift"
+                  timestampString = "505177926.833184"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
