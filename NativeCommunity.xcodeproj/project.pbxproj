@@ -15,6 +15,7 @@
 		BF728C411E1C7F950082B18F /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF728C401E1C7F950082B18F /* StatusTableViewCell.swift */; };
 		BF7A0F201E171D76005740F6 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A0F1F1E171D76005740F6 /* CommentsTableViewCell.swift */; };
 		BF7A0F221E173FB4005740F6 /* PostsTabTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A0F211E173FB4005740F6 /* PostsTabTableViewCell.swift */; };
+		BF7B95461E1ED186001A7161 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B95451E1ED186001A7161 /* EditProfileViewController.swift */; };
 		BFD611E11E1446E40054A0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E01E1446E40054A0FB /* AppDelegate.swift */; };
 		BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD611E21E1446E40054A0FB /* MainViewController.swift */; };
 		BFD611E61E1446E40054A0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD611E41E1446E40054A0FB /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		BF728C401E1C7F950082B18F /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		BF7A0F1F1E171D76005740F6 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		BF7A0F211E173FB4005740F6 /* PostsTabTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTabTableViewCell.swift; sourceTree = "<group>"; };
+		BF7B95451E1ED186001A7161 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BFD611DD1E1446E40054A0FB /* NativeCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD611E01E1446E40054A0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFD611E21E1446E40054A0FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				BFD611E01E1446E40054A0FB /* AppDelegate.swift */,
 				BF3125E91E15CEEF0015F16F /* ProfileViewController.swift */,
 				BF3125EB1E15DC2B0015F16F /* ProfilePagePageViewer.swift */,
+				BF7B95451E1ED186001A7161 /* EditProfileViewController.swift */,
 				BF3125ED1E15DE750015F16F /* ProfilePageTableViewController.swift */,
 				BFD611E21E1446E40054A0FB /* MainViewController.swift */,
 				BFD612151E1462280054A0FB /* CommunityFrontPageTableViewController.swift */,
@@ -306,6 +309,7 @@
 				BFD611E31E1446E40054A0FB /* MainViewController.swift in Sources */,
 				BF361E331E15A12A003F9EFA /* AskTheCommunityViewController.swift in Sources */,
 				BF3125EC1E15DC2B0015F16F /* ProfilePagePageViewer.swift in Sources */,
+				BF7B95461E1ED186001A7161 /* EditProfileViewController.swift in Sources */,
 				BFD612121E1461C70054A0FB /* TopTabTableViewCell.swift in Sources */,
 				BF7A0F201E171D76005740F6 /* CommentsTableViewCell.swift in Sources */,
 				BF3125EA1E15CEEF0015F16F /* ProfileViewController.swift in Sources */,

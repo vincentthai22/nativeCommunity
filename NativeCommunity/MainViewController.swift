@@ -92,6 +92,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         print ("Profile image clicked")
         let nextViewController = self.storyboard!.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         nextViewController.profileData = self.profileData as [String : AnyObject]
+        nextViewController.navController = self.navigationController
         //nextViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(nextViewController, animated: true, completion: nil)
         //self.navigationController?.pushViewController(nextViewController, animated: true)

@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
     var editProfileBut : UIButton?
 
     var profilePagePageViewController : ProfilePagePageViewController?
+    var navController : UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class ProfileViewController: UIViewController {
         self.profilePageProfileTabView.bringSubview(toFront: self.editProfileBut!)
         let backButton = UIBarButtonItem.init(title: "Back", style: .plain, target: self, action: #selector(backButtonHandler))
         self.navItem.leftBarButtonItem = backButton
+        
         setupNavBar()
         
         self.userNameLabel.sizeToFit()
@@ -60,14 +62,15 @@ class ProfileViewController: UIViewController {
         self.numberOfPostsLabel.text = (self.profileData[self.profileDataStrings[self.postsIndex]] as? String)?.appending(" posts ")
         self.titleLabel.text = self.profileData[self.profileDataStrings[self.titleIndex]] as? String
     }
+    
     func editProfileButtonHandler () {
         print("editprof pressed")
+        let editProfileViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        editProfileViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(editProfileViewController, animated: true, completion: nil)
     }
     func setupNavBar() -> Void {
-        
-//        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 120)
         self.navBar.barTintColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
         self.navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navBar.tintColor = UIColor.white
