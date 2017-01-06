@@ -17,8 +17,8 @@ class ProfilePageTableViewController: UITableViewController {
     let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
     let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     
-    let profileSectionStrings = ["About Me", "Birthday", "Location", "Interests"]
-    let aboutMeIndex = 0, birthdayIndex = 1, locationIndex = 2, interestsIndex = 3
+    let profileSectionStrings = ["About Me", "Birthday", "Location", "Interests", "Status"]
+    let aboutMeIndex = 0, birthdayIndex = 1, locationIndex = 2, interestsIndex = 3, statusIndex = 4
     
     let postsSectionStrings = ["title", "description", "time", "category"]
     let titleIndex = 0, descriptionIndex = 1, timeIndex = 2, postsCategoryIndex = 3
@@ -27,6 +27,7 @@ class ProfilePageTableViewController: UITableViewController {
     let commentsIndex = 0, commentsCategoryIndex = 1, likesIndex = 2
 
     var currentTab : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -48,7 +49,7 @@ class ProfilePageTableViewController: UITableViewController {
             
             if indexPath.row == 0 {
                 let statusCell = cell as! StatusTableViewCell
-                statusCell.statusLabel.text = "Hello! Nice to meet you!"
+                statusCell.statusLabel.text = self.profileDataObject[self.profileSectionStrings[self.statusIndex]] as! String?
                 
             } else {
             

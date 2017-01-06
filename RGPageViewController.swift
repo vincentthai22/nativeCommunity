@@ -437,6 +437,8 @@ class RGPageViewController: UIViewController, UIPageViewControllerDataSource, UI
     }
     
     fileprivate func updateTabIndex(_ index: Int, animated: Bool) {
+     //   print("imcalledalot index is \(index)")
+        
         if let currentTabCell = tabScrollView.cellForItem(at: IndexPath(row: currentTabIndex, section: 0)) {
             (currentTabCell.contentView.subviews.first as! RGTabView).selected = false
         }
@@ -522,8 +524,12 @@ class RGPageViewController: UIViewController, UIPageViewControllerDataSource, UI
         }
         
         currentTabIndex = index
+        updateTabColor(index: index)
     }
-    
+    //overridden func
+    func updateTabColor(index : Int){
+        
+    }
     fileprivate func updatePager(_ index: Int) {
         if let vc: UIViewController = viewControllerAtIndex(index) {
             if index == currentPageIndex {

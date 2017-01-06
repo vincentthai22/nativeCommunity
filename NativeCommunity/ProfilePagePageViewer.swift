@@ -29,23 +29,29 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
     let tabNames = ["PROFILE", "POSTS", "COMMENTS", "SETTINGS"]
     let profileTabIndex = 0, postsTabIndex = 1, commentsTabIndex = 2, settingsTabIndex = 3
     var profileTab = [String:AnyObject]()
+    var tabViews = [UILabel]()
     //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
     
     //Dummy data
-    let testProfileData = ["About Me" : "Hi I'm Jilian and my favorite thing in the world is to dance!", "Birthday" : "Oct 17, 1993 (23)", "Location" : "San Marino, CA", "Interests" : "dancing, picnics, music"]
+    let testProfileData = ["About Me" : "Hi I'm Jilian and my favorite thing in the world is to dance!", "Birthday" : "Oct 17, 1993 (23)", "Location" : "San Marino, CA", "Interests" : "dancing, picnics, music", "Status" : "Hello! Nice to meet you!"]
     let testPostsData = [[ "title" : "Is it worth it?", "description" : "I've been on Lutera (BC pills) for about two months now . . .", "time" : "2 mins ago in" , "category" : "Period Questions"], ["title" : "Should I be worred?", "description" : "Hello guys I am new to the period community but I thought", "time" : "3 weeks ago in" , "category" : "Period Questions"], ["title" : "Cramping before period? Did you have implantation cramping before your period?", "description" : " ", "time" : "8 months ago" , "category" : "Period Questions"]]
     let testCommentsData = [["comments" : "No its okay, I thought if someone had the same problem they could tell me. Besides, if I wasn't", "category" : "Tampons", "likes" : "0" ],["comments" : "Do you think it could be becuase your boyfriend problem they could tell me. Besides, if I wasn't...", "category" : "Tampons", "likes" : "0" ],["comments" : "Have a good time! I'm sure you guys will get to see the show or even at least on the board ...", "category" : "I'm going on vacation we're going to the Sha..", "likes" : "0" ],["comments" : "Is it itchy? I used to have a similar condition it turned out to be a second for lorem ipsum, r..", "category" : "Question??", "likes" : "0" ]]
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.datasource = self
         self.delegate = self
+        
         self.data = [self.testProfileData as Dictionary<String, AnyObject>]
         self.profileTab = self.testProfileData as [String : AnyObject]
+        
         self.tabs[self.tabNames[profileTabIndex]] = self.data
         self.tabs[self.tabNames[postsTabIndex]] = self.testPostsData as [[String : AnyObject]]?
         self.tabs[self.tabNames[commentsTabIndex]] = self.testCommentsData as [[String : AnyObject]]?
         self.tabbar.frame = CGRect.init(x: 0, y: -3, width: view.bounds.width, height: self.tabbarHeight)
+        
+        
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -71,18 +77,33 @@ class ProfilePagePageViewController: RGPageViewController, RGPageViewControllerD
         
         tabView?.font = UIFont.systemFont(ofSize: 14)
         tabView?.text = self.tabNames[index]
-        tabView?.textColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+        if self.currentTabIndex == index {
+            tabView?.textColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+        } else {
+            tabView?.textColor = UIColor.darkGray
+        }
         tabView?.sizeToFit()
         
+        self.tabViews.append(tabView!)
         print ("index \(index)")
         
         return tabView!
     }
     
-    
+    override func updateTabColor(index: Int) {
+        for i in 1..<self.tabViews.count {
+            //print ("i is \(i) tabviewCounts \(self.tabViews.count)")
+            if index+1 == i{
+                self.tabViews[i].textColor =  UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+            } else {
+                self.tabViews[i].textColor = UIColor.darkGray
+            }
+        }
+        
+    }
     func viewControllerForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIViewController? {
         if (self.tabNames.count == 0) || (index >= self.tabNames.count) {
-            print ("index is \(index)")
+            //print ("index is \(index)")
             return nil
         }
         

@@ -28,8 +28,8 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     //tab names used to retrieve each array of dictionaries from the "tabs" dictionary.
     let tabNames = ["TOP", "NEW", "PERIOD QUESTIONS", "OFF-TOPIC"]
-    
     let topTabIndex = 0, newTabIndex = 1, periodQuestionsTabIndex = 2, offTopicTabIndex = 3
+    var tabViews = [UILabel]()
     
     var askTheCommunityButtonn :UIButton?
     
@@ -76,7 +76,7 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     
     func setupNavBar() -> Void {
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 240/255, green: 170/255, blue: 170/255, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navItem.titleView?.tintColor = UIColor.white
@@ -117,23 +117,40 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
     func tabViewForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIView {
         var tabView : UILabel?
         
-            tabView = UILabel.init()
+        tabView = UILabel.init()
             
-            tabView?.font = UIFont.systemFont(ofSize: 14)
-            tabView?.text = self.tabNames[index]
+        tabView?.font = UIFont.systemFont(ofSize: 14)
+        tabView?.text = self.tabNames[index]
+        if self.currentPageIndex == index {
             tabView?.textColor = UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
-            tabView?.sizeToFit()
+        } else {
+            tabView?.textColor = UIColor.darkGray
+        }
+        //print("Current page index - \(self.currentPageIndex)   currenttabindex \(self.currentTabIndex)  index \(index) ")
+        tabView?.sizeToFit()
         
+        self.tabViews.append(tabView!)
         
         return tabView!
     }
     
+    override func updateTabColor(index: Int) {
+        for i in 1..<self.tabViews.count {
+            //print ("i is \(i) tabviewCounts \(self.tabViews.count)")
+            if index+1 == i{
+                self.tabViews[i].textColor =  UIColor.init(red: 1, green: 153/255, blue: 204/255, alpha: 1)
+            } else {
+                self.tabViews[i].textColor = UIColor.darkGray
+            }
+        }
+
+    }
     
     func viewControllerForPageAtIndex(_ pageViewController: RGPageViewController, index: Int) -> UIViewController? {
         if (data.count == 0) || (index >= data.count) {
             return nil
         }
-        
+       // print ("index is \(index)")
         // Create a new view controller and pass suitable data.
         let dataViewController = self.storyboard!.instantiateViewController(withIdentifier: "CommunityFrontPageTableViewController") as! CommunityFrontPageTableViewController
         switch (index) {
