@@ -12,7 +12,6 @@ import UIKit
 class CommunityFrontPageTableViewController: UITableViewController {
     
     //An array of dictionaries holding data for each individual post which will then be loaded into each individual table cell
-    
     var dataObject : [[String : AnyObject]]!
     let dataStrings = ["question", "description", "username", "category"]
     let questionIndex = 0, descriptionIndex = 1, usernameIndex = 2, categoryIndex = 3
@@ -56,8 +55,10 @@ class CommunityFrontPageTableViewController: UITableViewController {
             let postedInTextSize = tempText?.size(attributes: [NSFontAttributeName: font])
             cell2.postedInLabel.frame = CGRect(x: cell2.usernameLabel.frame.origin.x + (usernameTextSize?.width)! + 5, y: cell2.postedInLabel.frame.origin.y, width: cell2.postedInLabel.frame.size.width, height: cell2.postedInLabel.frame.size.height)
             cell2.categoryLabel.frame = CGRect(x: cell2.postedInLabel.frame.origin.x + (postedInTextSize?.width)! + 5, y: cell2.postedInLabel.frame.origin.y, width: cell2.categoryLabel.frame.size.width, height: cell2.postedInLabel.frame.size.height)
+        
+        //load images in background thread
         DispatchQueue.global().async {
-            
+            //store images in a temp variable
             var profileImg : UIImage?, heartIconImg:UIImage?, conversationIconImg:UIImage?, viewsIconImg:UIImage?
             
             do {
@@ -71,6 +72,7 @@ class CommunityFrontPageTableViewController: UITableViewController {
             viewsIconImg = #imageLiteral(resourceName: "eye_icon")
             
             DispatchQueue.main.sync {
+                //load images from temp variable to actual variables within the cell
                 cell2.profileImageView.image = profileImg
                 cell2.heartIconImageView.image = heartIconImg
                 cell2.conversationIconImageView.image = conversationIconImg

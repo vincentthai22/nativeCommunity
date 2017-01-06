@@ -25,6 +25,8 @@ class EditProfileViewController: UIViewController {
     let editProfileStrings = ["About Me", "Birthday", "Location", "Interests", "Status"]
     let aboutMeIndex = 0, birthdayIndex = 1, locationIndex = 2, interestsIndex = 3, statusIndex = 4
     
+    var delegate : EditProfileDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBar()
@@ -42,7 +44,6 @@ class EditProfileViewController: UIViewController {
         self.aboutTextField.text = self.editProfileData[self.editProfileStrings[self.aboutMeIndex]] as! String!
         self.locationTextField.text = self.editProfileData[self.editProfileStrings[self.locationIndex]] as! String?
         self.interestsTextFIeld.text = self.editProfileData[self.editProfileStrings[self.interestsIndex]] as! String!
-        
     }
     func setUpTextFields() {
         
@@ -68,10 +69,20 @@ class EditProfileViewController: UIViewController {
     }
     
     func saveButtonHandler(){
-        
+        self.editProfileData[self.editProfileStrings[self.aboutMeIndex]] = self.aboutTextField.text as AnyObject?
+        self.editProfileData[self.editProfileStrings[self.statusIndex]] = self.statusTextField.text as AnyObject?
+        self.editProfileData[self.editProfileStrings[self.locationIndex]] = self.locationTextField.text as AnyObject?
+        self.editProfileData[self.editProfileStrings[self.interestsIndex]] = self.interestsTextFIeld.text as AnyObject?
+       // (self.parent as! ProfileViewController).profileDescription = self.editProfileData
+        onSave(profileData: self.editProfileData)
         self.dismiss(animated: true, completion: nil)
-        
     }
+    
+    internal func onSave(profileData : [String : AnyObject] ) {
+        self.delegate?.onSave(profileData: profileData)
+
+    }
+    
     @IBAction func changeButtonHandler(_ sender: UIButton) {
         
         print("change photo clicked")

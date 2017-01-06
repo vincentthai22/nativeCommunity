@@ -81,8 +81,12 @@ class MainViewController: RGPageViewController, RGPageViewControllerDataSource, 
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navItem.titleView?.tintColor = UIColor.white
         self.navItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "person_icon_small"), style: .plain, target: self, action: #selector(profileImageButtonHandler))
+        self.navItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backButtonHandler))
     }
-    
+    func backButtonHandler() {
+        print("cancel hit")
+        self.dismiss(animated: true, completion: nil)
+    }
     func profileImageButtonHandler() {
         let transition = CATransition.init()
         transition.duration = 0.5
